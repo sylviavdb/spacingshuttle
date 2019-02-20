@@ -51,6 +51,11 @@ header img{
 	padding-top: 5%;
 }
 
+.dashboard{
+	  display: grid;
+  grid-template-columns: 1fr;
+}
+
 .datavisual1, .datavisual2, .datavisual3{
 	padding: 10%;
 	border-color: grey;
@@ -81,7 +86,7 @@ header img{
 		
 		max-width: auto;
   		height: auto;
-  		/*padding-left: 27%;*/
+  		padding-left: 39%;
   		grid-column: 1;
 	}
 
@@ -92,16 +97,17 @@ header img{
 		grid-column-end: 4;
 	}
 
-	.imgRuimte img{
-		display: none;
 
-	}
 
 	.imgRuimte{
-		background-image: url("../img/astronaut.jpg");
+		background: url("../img/astronaut.jpg");
 		background-position: center;
     	background-repeat: no-repeat;
     	background-size: cover;
+	}
+	.imgRuimte img{
+		display: none;
+
 	}
 
 	.dashboard {
@@ -112,22 +118,57 @@ header img{
 /* einde medium */
 
 /* begin large */
-@media only screen and (min-width: 800px){
+@media only screen and (min-width: 800px) and (max-width: 999px){
 	header{
 	height: auto;
 	width: auto;
 	background-color: #0D0D0D;
+	display: grid;
+ 	grid-template-columns: 1fr;
+  	grid-template-areas:
+  	"img"
+  	"title"
 } 
 
+	.imgRuimte{
+		background: url("../img/astronaut.jpg");
+		background-position: center;
+    	background-repeat: no-repeat;
+    	background-size: cover;
+    	height: 400px;
+    	width: 100%;
+	}
+
+.imgRuimte img{
+	height: 0px;
+	width: 0px;
+}
+
+.rechthoek1{
+	margin-top: 35%;
+}
+
 .rechthoek1 h2{
-	padding-top: 2%; 
+	padding-top: 5%; 
 }
 
 .dashboard{
 	display: grid;
-	grid-template-columns: auto auto auto;
+	grid-column: auto auto auto;
 	
 }
 /* einde klein scherm */
 
 /*begin groot scherm */
+
+@media only screen and (min-width: 1000px){
+	.dashboard{
+		display: grid;
+		grid-template-columns: 1;
+  		grid-template-areas:
+  		"chartContainer"
+  		"chartContainer2"
+  		"chartContainer3"
+
+	}
+}
